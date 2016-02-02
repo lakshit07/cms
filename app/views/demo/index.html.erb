@@ -1,0 +1,19 @@
+<h1><center>My first Web Page</center></h1>
+
+<h3>
+<!-- <%= link_to('Welcome' , '#' , onclick: "testing(); return true;") %> -->
+<%= javascript_tag("testing();") %>
+
+<br>
+
+<p><center>Index Page!</center></p>
+
+<center> <%= link_to("Subjects" , {:action => 'list' , :controller => 'subjects'}) %> </center><br>
+
+<br><center>
+<%= image_tag('bits.png', size: '100x100', :alt => "BITS Pilani") %>
+</center><br>
+
+<footer><center>Made by Lakshit Bhutani<center></footer>
+
+</h3>
