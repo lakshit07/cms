@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+ get 'admin' , to: 'access#index'
+
   # post "subjects/create" => "subjects#create"	
 
   # get 'subjects/list' => 'subjects#list'
@@ -90,5 +92,7 @@ post "sections/update"
 post "sections/destroy"
 
 post "sections/create"
+
+post "access/attempt_login"
 
 end

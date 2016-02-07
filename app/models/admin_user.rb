@@ -24,6 +24,7 @@ class AdminUser < ActiveRecord::Base
   # validates_confirmation_of :email
   
   # new "sexy" validations
+  
   validates :first_name, :presence => true, :length => { :maximum => 25 }
   validates :last_name, :presence => true, :length => { :maximum => 50 }
   validates :username, :length => { :within => 8..25 }, :uniqueness => true
@@ -48,6 +49,22 @@ class AdminUser < ActiveRecord::Base
   def self.hash_with_salt(password = "" , salt="")
     Digest::SHA1.hexdigest("Put #{salt} on the #{password}")  
   end   
+
+  def self.authenticate(username="" , password="")
+    if (user = AdminUser.find_by_username(username))
+      
+      salted = AdminUser.hash_with_salt(password , user.salt)
+      
+      if user.hashed_password == salted
+        return user
+      else
+        return false        
+      end
+
+    else
+      return false      
+    end
+  end  
 
 private
 

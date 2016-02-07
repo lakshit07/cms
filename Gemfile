@@ -23,6 +23,17 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# For admin interface
+
+# gem 'rails_admin'
+# gem 'activeadmin'
+
+# Plus integrations with:
+# gem 'devise'
+# gem 'cancan' # or cancancan
+# gem 'draper'
+# gem 'pundit'
+
 # For user_protected and user_accessible attribute
 gem 'protected_attributes'
 
@@ -47,4 +58,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-

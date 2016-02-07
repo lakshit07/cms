@@ -1,5 +1,7 @@
 class SubjectsController < ApplicationController
 
+   before_filter :confirm_logged_in
+   
    layout 'admin'
 
    def index
@@ -8,7 +10,7 @@ class SubjectsController < ApplicationController
    end	
 
    def list
-	  @subjects = Subject.order("subjects.position ASC")
+     @subjects = Subject.order("subjects.position ASC")
    end		
 
    def show
