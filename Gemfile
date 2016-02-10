@@ -25,8 +25,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # For admin interface
 
-# gem 'rails_admin'
+ gem 'rails_admin'
 # gem 'activeadmin'
+
+# For authorization
+gem "cancancan"
 
 # Plus integrations with:
 # gem 'devise'
